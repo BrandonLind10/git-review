@@ -2,6 +2,7 @@ class Cat{
     constructor(name,age=.1,sex){
         this.name = name;
         this.age = age;
+        this.health = health;
     }
     
     growUp(){
@@ -29,6 +30,15 @@ class Cat{
         }
         else{
             let kitten = new Cat(null, .1 , Cat.getRandomSex());
+            kitten.parent=this;
+            
             return kitten;
             }
+    }
+    
+        scratch(target){
+            target.heath--;
+            
+            console.log(this.name + " attacked " + target.name " and " + target.name + "'s "  + "current health is " + target.health);
+        }
     }
